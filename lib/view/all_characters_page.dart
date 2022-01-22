@@ -25,34 +25,60 @@ class AllCharactersPage extends StatelessWidget {
                 Get.toNamed('/character_page', arguments: {'index': index});
               },
               child: Container(
-                decoration: BoxDecoration(),
-                padding: const EdgeInsets.all(8),
-                child: Row(
+                margin: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(8.0),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12.0),
+                    boxShadow: const [
+                      BoxShadow(color: Colors.black12, blurRadius: 3.0)
+                    ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 100,
-                      width: 100,
-                      child: Ink.image(
-                          image:
-                              NetworkImage(controller.characters[index].image)),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(controller.characters[index].name,
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold)),
-                          const SizedBox(height: 10),
-                          controller.characters[index].gender == 'Male'
-                              ? const Icon(Icons.male)
-                              : const Icon(Icons.female),
-                        ],
+                    Container(
+                      height: 200.0,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: NetworkImage(
+                                controller.characters[index].image),
+                            fit: BoxFit.cover),
+                        borderRadius: BorderRadius.circular(12.0),
                       ),
                     ),
+                    const SizedBox(height: 8.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(6.0),
+                          margin: const EdgeInsets.all(6.0),
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          child: Text(
+                            controller.characters[index].name,
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 20),
+                          ),
+                        ),
+                        controller.characters[index].gender == 'Male'
+                            ? const Icon(Icons.male, size: 30)
+                            : const Icon(Icons.female, size: 30),
+                      ],
+                    ),
+                    const SizedBox(height: 8.0),
+                    // Text(
+                    //   article.title,
+                    //   style: const TextStyle(
+                    //     fontWeight: FontWeight.bold,
+                    //     fontSize: 16.0,
+                    //   ),
+                    // ),
+                    // const SizedBox(height: 8.0),
                   ],
                 ),
               ),
