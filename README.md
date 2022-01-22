@@ -1,16 +1,19 @@
 # rick_and_morty
 
-A new Flutter project.
+An app for getting some information about the characters of a popular cartoon
 
-## Getting Started
+## Stack
 
-This project is a starting point for a Flutter application.
+- GraphQL
+- GetX
 
-A few resources to get you started if this is your first Flutter project:
+### Packages
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- graphql_flutter - for interactions with the server
+- json_serializable - for conversion data to JSON and from JSON format
+- get - for the state management
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Example
+
+https://user-images.githubusercontent.com/50975460/150639597-4c853ff2-f188-4747-88d5-1304c1c92d54.MOV
+
