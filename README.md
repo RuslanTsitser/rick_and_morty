@@ -6,6 +6,7 @@ An app for getting some information about the characters of a popular cartoon
 
 - GraphQL
 - GetX
+- API https://rickandmortyapi.com/graphql
 
 ### Packages
 
